@@ -1,3 +1,5 @@
+package javapractice.leetcode.basic;
+
 import java.util.ArrayList;
 import java.util.List;
 
