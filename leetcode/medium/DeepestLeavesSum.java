@@ -1,3 +1,7 @@
+/**
+Given a binary tree, return the sum of values of its deepest leaves.
+
+  **/
 public class DeepestLeavesSum {
 
 	public static void main (String [] args)
