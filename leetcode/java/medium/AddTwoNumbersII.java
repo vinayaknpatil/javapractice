@@ -17,7 +17,8 @@ public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         
         Stack<Integer> l1stack = new Stack<Integer>();
         Stack<Integer> l2stack = new Stack<Integer>();
-        
+
+// Dont need this - keep adding the new node as the head 	
         Stack<Integer> resultStack = new Stack<Integer>();
         // Populate the stack 
         
