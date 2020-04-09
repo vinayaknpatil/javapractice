@@ -27,7 +27,9 @@ Output: 2
 Explanation: Two 1s are counted cause 2 is in arr.
  */
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.HashMap;
+import java.util.HashSet;
 
 public class CountingElements {
 	
@@ -67,7 +69,7 @@ public class CountingElements {
         
         // Loop thru the map
         
-        for(Integer k: countMap.keySet())
+        /*for(Integer k: countMap.keySet())
         {
             Integer keyCount = countMap.get(k);
         // For each element, get the +1     
@@ -79,10 +81,34 @@ public class CountingElements {
                 // Add to the total sum 
                 count += keyCount;
             }
+        }*/
+        
+        for(Entry<Integer,Integer> entrySet : countMap.entrySet()) {
+            int key = entrySet.getKey();           
+            if(countMap.containsKey(key+1)) {
+                count=count+entrySet.getValue();
+            }
         }
         
        return count; 
         
+    }
+	
+	
+	public int countElementsUsingSet(int[] arr) {
+        int count =0;
+        if(arr.length==1)
+            return count;
+	        HashSet<Integer> mSet = new HashSet<Integer>();
+	        for(int i=0; i<arr.length ; i++) {
+	           mSet.add(arr[i]);            
+	        }        
+	        for(int i=0 ; i<arr.length ;i++) {
+	           if(mSet.contains(arr[i]+1)) {
+	        	   count++;
+	           }
+	        }
+	        return count;
     }
 	
 }
