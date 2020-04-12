@@ -51,7 +51,7 @@ public class DiameterBinaryTree {
 			n12.left = n15;
 			n11.left = n14;
 			
-			System.out.println(dbt.diameterOfBinaryTree(n10));
+			System.out.println(dbt.diameterOfBinaryTree(n1));
 			
 		}
 	
@@ -64,19 +64,9 @@ public class DiameterBinaryTree {
 	    	if(root == null || (root.left == null && root.right == null))
 	    		return 0;
 	    	
-	       	int leftDepth = getDepth(root.left) + 1;
+	    	getDepth(root);
 	    	
-	    	int rightDepth = getDepth(root.right) + 1;
-	    	
-	    //	System.out.println("Left "+leftDepth+" right "+rightDepth);
-	    	
-	    	int distAtNode = leftDepth + rightDepth;
-	    	
-	    	if(distAtNode > maxDiameter)
-	    			maxDiameter = distAtNode;
-	    	
-	    	
-	    	return maxDiameter;
+	       	return maxDiameter;
 	    	
 	    }
 	    
