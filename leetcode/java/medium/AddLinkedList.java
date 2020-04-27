@@ -21,7 +21,7 @@ public class AddLinkedList {
 		n4.next = n5;
 		
 		
-		Solution s = new Solution();
+		AddLinkedList s = new AddLinkedList();
 		ListNode result = s.addTwoNumbers(n1, n4);
 		
 		parseAndPrint(result);

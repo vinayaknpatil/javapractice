@@ -50,7 +50,7 @@ public class BalanceBST {
 		if(root == null)
 			return null;
 		
-		ArrayList<Integer> nodeList = new ArrayList<>();
+		ArrayList<Integer> nodeList = new ArrayList<Integer>();
 		
 		parseAndAddNode(root, nodeList);
 		
