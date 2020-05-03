@@ -31,6 +31,8 @@ public int firstBadVersion(int n) {
         int end = n;
         int index = 1;
         
+     
+        
         while(start <= end)
         {
             int mid = start + (end-start)/2;
