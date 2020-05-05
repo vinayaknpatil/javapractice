@@ -19,6 +19,8 @@ public boolean canConstruct(String ransomNote, String magazine) {
         if(magazine == null || ransomNote == null)
             return false;
         
+        if(ransomNote.length() > magazine.length())
+            return false;
         
         int[] lookup = new int[255];
         
