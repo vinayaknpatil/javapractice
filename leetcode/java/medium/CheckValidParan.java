@@ -30,8 +30,6 @@ Output: True
  * Finally check the open number of ( .. if that is > 0 then false
  */
 
-import java.util.Stack;
-
 public class CheckValidParan {
 	
 	public static void main(String [] args)

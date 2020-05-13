@@ -26,10 +26,10 @@ Input: arr = [1,1,2,2]
 Output: 2
 Explanation: Two 1s are counted cause 2 is in arr.
  */
-import java.util.Map;
-import java.util.Map.Entry;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
 
 public class CountingElements {
 	

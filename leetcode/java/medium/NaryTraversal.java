@@ -4,10 +4,10 @@
 Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).
  */
 
-import java.util.List;
 import java.util.ArrayList;
-import java.util.Queue;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class NaryTraversal {
 	
