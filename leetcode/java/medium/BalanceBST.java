@@ -77,7 +77,7 @@ public class BalanceBST {
 		if(start > end)
 			return null;
 		
-		int mid = (start + end )/2;
+		int mid = start + (end - start )/2;
 		
 		if(mid > array.length - 1 || mid < 0)
 			return null;
@@ -102,6 +102,7 @@ public class BalanceBST {
 	}
 	 
 	
+	// In order traversal to get the Sorted tree
 	private void parseAndAddNode (TreeNode node, ArrayList<Integer> nodeList)
 	{
 		if(node == null)

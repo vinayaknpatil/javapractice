@@ -76,13 +76,13 @@ public class MaxSumCircularSubArray {
 			  localMax = A[i] + Math.max(0, localMax);			  
 			  globalMax = Math.max(globalMax, localMax);
 			  
-			  //localMin = A[i] > 0 ? 0: Math.min(A[i], A[i] + localMin);
+			  localMin = A[i] + Math.min(localMin,0);
 				
-			  if(localMin + A[i] < A[i])
+			  /*if(localMin + A[i] < A[i])
 				  localMin += A[i];
 			  else
 				  localMin = A[i];
-			  
+			  */
 			  globalMin = Math.min(localMin, globalMin);
 			  
 			  sum+= A[i];
