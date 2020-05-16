@@ -47,7 +47,7 @@ public class MaxSumCircularSubArray {
 	{
 		MaxSumCircularSubArray msa = new MaxSumCircularSubArray();
 		
-		int[] A = new int[]{1,-2,3,-2};
+		int[] A = new int[]{-2,4,-5,4,-5,9,4};
 		
 		System.out.println(msa.maxSubarraySumCircular(A));
 		
@@ -60,51 +60,37 @@ public class MaxSumCircularSubArray {
 		  if(A == null || A.length == 0)
 			  return 0;
 		  
-		  int maxValue = A[0];
+		
+		  int globalMax = A[0];
+		  int localMax = A[0];
 		  
-		  int arrayLen = A.length;
+		  int globalMin = A[0];
+		  int localMin = A[0];
 		  
-		  int [] N = new int [ (2*arrayLen) -1];
+		  int sum = A[0];
 		  
-		  for(int i = 0 ; i < N.length; i++)
+		  
+		  for(int i = 1; i< A.length; i++)
 		  {
-			  N[i] = A[i%arrayLen];
+			  
+			  localMax = A[i] + Math.max(0, localMax);			  
+			  globalMax = Math.max(globalMax, localMax);
+			  
+			  //localMin = A[i] > 0 ? 0: Math.min(A[i], A[i] + localMin);
+				
+			  if(localMin + A[i] < A[i])
+				  localMin += A[i];
+			  else
+				  localMin = A[i];
+			  
+			  globalMin = Math.min(localMin, globalMin);
+			  
+			  sum+= A[i];
 		  }
 		  
-		  for(int i = 0; i< arrayLen; i++)
-		  {
-			  maxValue = Math.max(maxValue, getMaxInSubArray(N, i, arrayLen));
-		  }
+		 // System.out.println("Global max "+globalMax+" Global Min "+globalMin+ " Sum "+sum);
 		  
-		  // For each element till N -1, get the max using Kadane's algo.. take the max 
-		  
-		  return maxValue;
-		  
-	  }
-	  
-	  
-	  public int getMaxInSubArray(int [] N, int startIndex, int arrayLen)
-	  {
-		  
-		 int [] lookup = new int[arrayLen]; 
-		  
-		 lookup[0] = N[startIndex];
-		 
-		 int globalMax = lookup[0];
-		 
-		 for(int i = 1; i< arrayLen; i++)
-		 {
-			 
-			 int nIndex = startIndex+i;
-			 
-			 lookup[i] = Math.max(N[nIndex], lookup[i-1]+N[nIndex]);
-			 
-			 globalMax = Math.max(lookup[i], globalMax);
-			 
-		 }
-		  
-		//  System.out.println("Max value for index "+startIndex +" is "+globalMax);
-		  return globalMax;
+		  return (sum == globalMin) ? globalMax: Math.max(sum - globalMin, globalMax);
 		  
 	  }
 	

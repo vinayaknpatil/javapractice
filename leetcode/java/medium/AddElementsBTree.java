@@ -43,6 +43,7 @@ public List<Integer> getAllElements(TreeNode root1, TreeNode root2) {
         if(node == null)
             return;
         
+        // Because this is In order traversal, the lists will be in a sorted way 
         parseNode(node.left, result);
         result.add(node.val);
         parseNode(node.right, result);
