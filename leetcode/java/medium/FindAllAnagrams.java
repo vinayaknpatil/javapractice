@@ -40,8 +40,8 @@ public class FindAllAnagrams {
 	{
 		FindAllAnagrams findAllAn = new FindAllAnagrams();
 		
-		String s = "abcded";
-		String p = "ded";
+		String s = "eidbaooo";
+		String p = "ab";
 		
 		for(int i: findAllAn.findAnagrams(s, p))
 			System.out.println(i);
