@@ -10,11 +10,14 @@ public class Solution {
     public int[] twoSum(int[] nums, int target) {
         // Basic solution
 
-        int[] result = new int[];
+        int[] result = new int[10];
 
         // Now sort the array
 
-        int [] sortedArray = Arrays.sort(nums);
+        int [] sortedArray;
+        //= Arrays.sort(nums);
+        
+        sortedArray = nums;
 
         int firstIndex = -1;
         int secondIndex = -1;
@@ -28,7 +31,7 @@ public class Solution {
 
             int otherNum = target - firstNum;
 
-            int secondIndex = findOtherIndex(i, otherNum,sortedArray);
+             secondIndex = findOtherIndex(i, otherNum,sortedArray);
 
             if(secondIndex > -1)
             {
@@ -38,6 +41,8 @@ public class Solution {
                 return result;
             }
         }
+        
+        return result;
 
     }
 
