@@ -61,7 +61,7 @@ public class BSTFromInorder {
 }
 
 
-class Solution {
+class SolutionBST {
     int preIndex =0;
     public TreeNode bstFromPreorder(int[] preorder) {
         return constructBST(preorder,Integer.MAX_VALUE); 
