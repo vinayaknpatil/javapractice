@@ -54,7 +54,8 @@ public class Find2DMatrix {
 			 {
 				 return true;
 			 }
-			 else if(data > target)
+			 
+			 if(data > target)
 			 {
 				 end = mid - 1;
 			 }
