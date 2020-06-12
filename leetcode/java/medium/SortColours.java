@@ -48,6 +48,24 @@ public void sortColors(int[] nums) {
         
         for(int i = 0 ; i < nums.length; i++)
         {
+        	if(nums[i] == 2 )
+            {
+            	// Get the right index for first occurence of two
+                while(nums[twoIndex] == 2 && twoIndex > 0)
+                    twoIndex --;
+                
+                if(i >= twoIndex) // the numbers are already sorted
+                	break; 
+                
+                if(i < twoIndex)
+                {
+                  swap(nums,i, twoIndex);
+                 
+                  twoIndex --;
+                    
+                }
+            }
+        	// Its possible, after the swap that the current number is 0. then put it in the right index.
             if(nums[i] == 0) 
             {
                 if(i > zeroIndex)
@@ -56,28 +74,7 @@ public void sortColors(int[] nums) {
                 zeroIndex++;
                 
             }
-            else if(nums[i] == 2 )
-            {
-            	// Get the right index for last occurence of two
-                while(nums[twoIndex] == 2 && twoIndex > 0)
-                    twoIndex --;
-                
-                if(i < twoIndex)
-                {
-                  swap(nums,i, twoIndex);
-                 
-                  twoIndex --;
-                    
-                  // What if the number which came now is 0. Put it in the right index.
-                 if(nums[i] == 0)
-                 {
-                	 if(i > zeroIndex)
-                		 swap(nums,i, zeroIndex);
-                    zeroIndex++;
-                
-                 }
-                }
-            }
+            
         }
     } 
         void swap(int[] nums, int index1, int index2)
