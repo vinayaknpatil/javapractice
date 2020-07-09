@@ -30,6 +30,14 @@ It is guaranteed that costs.length is even.
  */
 public class TwoCityScheduling {
 	
+	public static void main(String [] args)
+	{
+		TwoCityScheduling tcs = new TwoCityScheduling();
+		int[][] costs = new int[][]{ {10,20}, {30,200},{400,50},{20,30}};
+		
+		System.out.println(tcs.twoCitySchedCost(costs));
+	}
+	
 	// Greedy algorithm .. Sort by the least cost diff vs most 
 
 	public int twoCitySchedCost(int[][] costs) {
@@ -41,6 +49,11 @@ public class TwoCityScheduling {
 		int aList = 0;
 		int bList = 0;
 		int sum = 0;
+		
+		for(int [] c: costs)
+		{
+			System.out.println(c[0] +" "+c[1]);
+		}
 		
 		for(int[] cost: costs)
 		{
@@ -56,6 +69,7 @@ public class TwoCityScheduling {
 				sum += cost[1];
 			}
 			
+			System.out.println("Sum "+sum);
 		}
 		
 		return sum;

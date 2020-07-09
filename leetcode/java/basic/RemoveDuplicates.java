@@ -18,7 +18,7 @@ public class RemoveDuplicates {
 public int removeDuplicates(int[] nums) {
         
 		int prevNum = Integer.MIN_VALUE;
-		int uniqueCount = 0;
+		//int uniqueCount = 0;
 		int index = 0;
 		
 		
@@ -36,12 +36,12 @@ public int removeDuplicates(int[] nums) {
 			{
 				nums[index] = num;
 				index ++;
-				uniqueCount ++;
+			//	uniqueCount ++;
 				prevNum = num;
 			}
 		}
 	
-		return uniqueCount;
+		return index;
     }
 	
 }

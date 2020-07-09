@@ -8,7 +8,7 @@ public class IsPerfectSquare {
         
 		long start = 1;
 		
-		long end = num/2;
+		long end = num/2;  // Take long to avoid overflows
     
 		
 		while(start <= end)
