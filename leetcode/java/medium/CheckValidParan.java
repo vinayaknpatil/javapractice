@@ -1,5 +1,6 @@
 /**
- * Given a string containing only three types of characters: '(', ')' and '*', write a function to check whether this string is valid. We define the validity of a string by these rules:
+ * Given a string containing only three types of characters: '(', ')' and '*', write a function to check whether this string is valid.
+ *  We define the validity of a string by these rules:
 
 Any left parenthesis '(' must have a corresponding right parenthesis ')'.
 Any right parenthesis ')' must have a corresponding left parenthesis '('.
