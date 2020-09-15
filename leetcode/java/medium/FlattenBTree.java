@@ -77,8 +77,8 @@ public void flatten(TreeNode root) {
 		root.left = null;
 		
 		// Now move the existing right to the end of the new right 
-		
-		moveRightNodeAtEnd(root, temp);
+		if(temp != null)
+			moveRightNodeAtEnd(root, temp);
 		
 		// Call flatten recursively on right side 
 		flatten(root.right);
@@ -88,6 +88,7 @@ public void flatten(TreeNode root) {
 
 	private void moveRightNodeAtEnd(TreeNode root, TreeNode temp)
 	{
+		
 		while(root.right != null)
 		{
 			System.out.println("Navigating thru right");

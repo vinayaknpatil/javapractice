@@ -48,7 +48,10 @@ public List<Integer> topKFrequent(int[] nums, int k) {
 	
 	for(int number: nums)
 	{
-		if(map.get(number) == null)
+		
+		map.put(number, map.getOrDefault(number, 0)+1);
+		
+		/*if(map.get(number) == null)
 		{
 			map.put(number, 1);
 		}
@@ -56,6 +59,7 @@ public List<Integer> topKFrequent(int[] nums, int k) {
 		{
 			map.put(number, map.get(number)+1);
 		}
+		*/
 	}
 	
 	PriorityQueue<Pair> pairQueue = new PriorityQueue<>(new Comparator<Pair>() {
